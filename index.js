@@ -205,7 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
       score++;
     }
 
-    // To'g'ri so'zni animatsiya bilan ko'rsatish
     correctWordDisplay.textContent =
       currentLanguage === "en" ? currentWord.uzb : currentWord.ing;
     correctWordDisplay.style.display = "block";
