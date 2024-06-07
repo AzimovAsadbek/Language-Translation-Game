@@ -67,3 +67,26 @@ button:hover {
 #stop-btn {
   background-color: red;
 }
+
+#correct-word-display {
+  position: absolute;
+  white-space: no-wrap;
+  top: 53.5%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  color: green;
+  animation: fadeInOut 2s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

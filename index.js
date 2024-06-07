@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const languageSelect = document.getElementById("language");
   const wordsTypeSelect = document.getElementById("words-type");
@@ -13,9 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const doneBtn = document.getElementById("done-btn");
   const scoreDisplay = document.getElementById("score-display");
   const selectArea = document.querySelector(".selection-area");
+  const correctWordDisplay = document.getElementById("correct-word-display");
 
   const words = {
-    day1: [
+    day9: [
       { ing: "read", uzb: "o'qimoq" },
       { ing: "play", uzb: "o'ynamoq" },
       { ing: "rain", uzb: "yomg'ir yog'moq" },
@@ -67,6 +66,58 @@ document.addEventListener("DOMContentLoaded", () => {
       { ing: "begin", uzb: "boshlamoq" },
       { ing: "finish", uzb: "tugatmoq" },
     ],
+    day10: [
+      { ing: "fridge", uzb: "muzlatgich" },
+      { ing: "t-short", uzb: "futbolka" },
+      { ing: "bed", uzb: "krovat" },
+      { ing: "scarf", uzb: "sharf" },
+      { ing: "aquarium", uzb: "akvarium" },
+      { ing: "doll", uzb: "qog'irchoq" },
+      { ing: "thief", uzb: "og'ri" },
+      { ing: "submarine", uzb: "suvosti kemasi" },
+      { ing: "border", uzb: "chegara" },
+      { ing: "helicopter", uzb: "vertolyot" },
+      { ing: "gun", uzb: "qurol" },
+      { ing: "palace", uzb: "saroy" },
+      { ing: "traffic lights", uzb: "svetafor" },
+      { ing: "mill", uzb: "tegirmon" },
+      { ing: "bowl", uzb: "kosa" },
+      { ing: "hole", uzb: "teshik" },
+      { ing: "sock", uzb: "paypoq" },
+      { ing: "insect", uzb: "hashorot" },
+      { ing: "line", uzb: "navbat" },
+      { ing: "swimming pool", uzb: "suzish havzasi" },
+      { ing: "rock", uzb: "qoyatosh" },
+      { ing: "microbe", uzb: "mikrob" },
+      { ing: "mail", uzb: "pochta" },
+      { ing: "farm", uzb: "ferma" },
+      { ing: "boat", uzb: "qayiq" },
+      { ing: "beach", uzb: "sohil, plyaj" },
+      { ing: "raccoon", uzb: "yenot" },
+      { ing: "zoo", uzb: "hayvnot bog'i" },
+      { ing: "bookshelf", uzb: "kitob javoni" },
+      { ing: "laptop", uzb: "noutbuk" },
+      { ing: "cellphone", uzb: "mobil telefon" },
+      { ing: "bellboy", uzb: "hammol" },
+      { ing: "receptionist", uzb: "qabulchi" },
+      { ing: "kitten", uzb: "mushukcha" },
+      { ing: "asistant", uzb: "yordamchi" },
+      { ing: "musician", uzb: "musiqachi" },
+      { ing: "instrument", uzb: "musiqa asbobi" },
+      { ing: "stage", uzb: "sahna" },
+      { ing: "gardener", uzb: "bog'bon" },
+      { ing: "co-pilot", uzb: "ikkinchi uchuvchi" },
+      { ing: "coach", uzb: "murabbiy" },
+      { ing: "player", uzb: "o'yinchi" },
+      { ing: "notebook", uzb: "daftar" },
+      { ing: "airport", uzb: "aeroport" },
+      { ing: "tomato", uzb: "pamidor" },
+      { ing: "potato", uzb: "kartoshka" },
+      { ing: "fork", uzb: "vilka" },
+      { ing: "spoon", uzb: "qoshiq" },
+      { ing: "map", uzb: "xarita" },
+      { ing: "nose", uzb: "burun" },
+    ],
     // Add more weekly words as needed, e.g., day2, day3, etc.
   };
 
@@ -76,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalWords = 0;
   let currentWord = "";
   let interval;
+  let dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // So'nggi kundan boshlaymiz
 
   wordsTypeSelect.addEventListener("change", () => {
     if (wordsTypeSelect.value === "weekly") {
@@ -88,7 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function getRandomWord() {
     let n = Math.floor(Math.random() * currentWords.length);
     let res = currentWords[n];
-    console.log(currentWords);
     currentWords.splice(n, 1);
     return res;
   }
@@ -99,11 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const weekNumber = parseInt(weekNumberInput.value, 10);
 
     if (wordsType === "daily") {
-      currentWords = words.day1; // Use daily words
+      dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // So'nggi kundan boshlaymiz
+      currentWords = words[`day${dayIndex}`]; // So'nggi kun so'zlari
     } else if (wordsType === "weekly" && !isNaN(weekNumber)) {
-      currentWords = words[`day${weekNumber}`] || words.day1; // Use specified week words or default to day1
+      currentWords = words[`day${weekNumber}`] || words[`day${dayIndex}`];
     } else {
-      currentWords = Object.values(words).flat(); // Use all words
+      currentWords = Object.values(words).flat(); // Barcha so'zlar
     }
 
     gameArea.style.display = "block";
@@ -118,28 +170,50 @@ document.addEventListener("DOMContentLoaded", () => {
   function nextWord() {
     clearInterval(interval);
     translationInput.value = "";
-    currentWord = getRandomWord();
-    wordDisplay.textContent =
-      currentLanguage === "en" ? currentWord.ing : currentWord.uzb;
-    totalWords++;
-    interval = setTimeout(checkTranslation, 10000);
+    if (currentWords.length === 0 && words[`day${dayIndex - 1}`]) {
+      dayIndex--; // Oldingi kun so'zlariga o'tamiz
+      currentWords = words[`day${dayIndex}`];
+    } else if (
+      !words[`day${dayIndex - 1}`] &&
+      !words[`day${dayIndex}`].length
+    ) {
+      location.reload();
+    }
+    if (currentWords.length > 0) {
+      currentWord = getRandomWord();
+      wordDisplay.textContent =
+        currentLanguage === "en" ? currentWord.ing : currentWord.uzb;
+      totalWords++;
+      interval = setTimeout(checkTranslation, 10000);
+    } else {
+      endGame();
+    }
   }
 
   function checkTranslation() {
     const translation = translationInput.value.trim().toLowerCase();
     const correctTranslation =
       currentLanguage === "en"
-        ? currentWord.uzb.toLowerCase()
+        ? currentWord.uzb.split(",")
         : currentWord.ing.toLowerCase();
-    if (translation === correctTranslation) {
+
+    if (
+      (Array.isArray(correctTranslation) &&
+        correctTranslation.includes(translation)) ||
+      translation == correctTranslation
+    ) {
       score++;
     }
-    console.log(totalWords);
-    if (totalWords < 50) {
-      nextWord();
-    } else {
-      endGame();
-    }
+
+    // To'g'ri so'zni animatsiya bilan ko'rsatish
+    correctWordDisplay.textContent =
+      currentLanguage === "en" ? currentWord.uzb : currentWord.ing;
+    correctWordDisplay.style.display = "block";
+    setTimeout(() => {
+      correctWordDisplay.style.display = "none";
+    }, 2000);
+
+    nextWord();
   }
 
   function endGame() {
@@ -147,10 +221,16 @@ document.addEventListener("DOMContentLoaded", () => {
     gameArea.style.display = "none";
     scoreDisplay.style.display = "block";
     const percentage = (score / totalWords) * 100;
-    scoreDisplay.textContent = `You got ${percentage}% correct translations!`;
+    scoreDisplay.textContent = `You got ${percentage}% correct translations! ${totalWords}/${score}`;
     startBtn.style.display = "inline";
     selectArea.style.display = "inline";
   }
+
+  translationInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      checkTranslation();
+    }
+  });
 
   startBtn.addEventListener("click", startGame);
   doneBtn.addEventListener("click", checkTranslation);
