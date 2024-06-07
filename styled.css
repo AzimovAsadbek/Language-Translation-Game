@@ -144,9 +144,9 @@ button:hover {
   }
 
   #correct-word-display {
-    font-size: 1.3em;
+    font-size: 1.4em;
     line-height: 32px;
-    top: 45%;
+    top: 52%;
     left: 50%;
   }
 }
