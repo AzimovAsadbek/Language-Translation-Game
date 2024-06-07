@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(interval);
     gameArea.style.display = "none";
     scoreDisplay.style.display = "block";
-    const percentage = (score / totalWords) * 100;
+    const percentage = Math.round((score / totalWords) * 100);
     scoreDisplay.textContent = `You got ${percentage}% correct translations! ${score}/${totalWords}`;
     startBtn.style.display = "inline";
     selectArea.style.display = "inline";
