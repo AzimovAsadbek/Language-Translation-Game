@@ -79,6 +79,11 @@ button:hover {
   animation: fadeInOut 2s;
 }
 
+.week-selection {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 @keyframes fadeInOut {
   0% {
     opacity: 0;
