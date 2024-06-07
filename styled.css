@@ -14,20 +14,26 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
+
+  font-size: 23px;
 }
 
 h1 {
   margin-bottom: 20px;
 }
 
+label {
+  font-size: 26px;
+}
+
 .language-selection,
 .game-area,
 #score-display {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 #word-display {
-  font-size: 24px;
+  font-size: 32px;
   margin-bottom: 10px;
 }
 
@@ -35,7 +41,7 @@ h1 {
   padding: 10px;
   font-size: 16px;
   width: calc(100% - 22px);
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 button {
@@ -58,10 +64,22 @@ button:hover {
 }
 
 #translation-input {
-  /* width: 300px; */
+  width: 500px;
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
   border-radius: 8px;
+  /* padding: 4px; */
+  height: 30px;
   border: 2px solid #363636;
   outline: none;
+}
+
+#start-btn {
+  width: 169px;
+  height: 50px;
+  font-size: 24px;
+  margin-top: 10px;
 }
 
 #stop-btn {
@@ -71,10 +89,10 @@ button:hover {
 #correct-word-display {
   position: absolute;
   white-space: no-wrap;
-  top: 53.5%;
+  top: 54%;
   left: 60%;
   transform: translate(-50%, -50%);
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: green;
   animation: fadeInOut 2s;
 }
@@ -93,5 +111,42 @@ button:hover {
   }
   100% {
     opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    height: 100%;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #translation-input {
+    width: 70%;
+    font-size: 14px;
+  }
+
+  button {
+    width: 30%;
+    padding: 10px;
+    font-size: 14px;
+  }
+  h1 {
+    font-size: 34px;
+  }
+
+  #word-display {
+    font-size: 28px;
+  }
+
+  #correct-word-display {
+    font-size: 1.3em;
+    line-height: 32px;
+    top: 80%;
+    left: 50%;
   }
 }
