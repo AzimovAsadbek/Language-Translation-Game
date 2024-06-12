@@ -1,3 +1,242 @@
+const data = {
+  day9: [
+    { ing: "read", uzb: "o'qimoq" },
+    { ing: "play", uzb: "o'ynamoq" },
+    { ing: "rain", uzb: "yomg'ir yog'moq" },
+    { ing: "run", uzb: "yugurmoq" },
+    { ing: "sleep", uzb: "uxlamoq" },
+    { ing: "come", uzb: "kelmoq" },
+    { ing: "learn", uzb: "o'rganmoq" },
+    { ing: "wait", uzb: "kutmoq" },
+    { ing: "bark", uzb: "vovullamoq, akillamoq" },
+    { ing: "drink", uzb: "ichmoq" },
+    { ing: "shout", uzb: "baqirmoq" },
+    { ing: "dance", uzb: "raqsga tushmoq" },
+    { ing: "call", uzb: "qo'ngiroq qilmoq" },
+    { ing: "visit", uzb: "tashrif buyurmoq" },
+    { ing: "driver", uzb: "haydovchi" },
+    { ing: "drive", uzb: "haydamoq" },
+    { ing: "sit", uzb: "o'tirmoq" },
+    { ing: "clean", uzb: "tozalmoq" },
+    { ing: "swim", uzb: "suzmoq" },
+    { ing: "people", uzb: "odamlar" },
+    { ing: "study", uzb: "talim olmoq" },
+    { ing: "employer", uzb: "ish beruvchi" },
+    { ing: "walk", uzb: "yurmoq" },
+    { ing: "ask", uzb: "so'ramoq" },
+    { ing: "sing", uzb: "kuylamoq" },
+    { ing: "listen", uzb: "tinglamoq" },
+    { ing: "pupil", uzb: "oquvchi" },
+    { ing: "answer", uzb: "javob bermoq" },
+    { ing: "parrot", uzb: "to'tiqush" },
+    { ing: "speak", uzb: "gapirmoq" },
+    { ing: "watch", uzb: "tomosha qilmoq" },
+    { ing: "enter", uzb: "kirmoq" },
+    { ing: "fly", uzb: "uchmoq" },
+    { ing: "correct", uzb: "tog'irlamoq" },
+    { ing: "employee", uzb: "xodim, ishchi" },
+    { ing: "enjoy", uzb: "rohatlanmoq" },
+    { ing: "air-conditioner", uzb: "konditsioner" },
+    { ing: "work", uzb: "ishlamoq" },
+    { ing: "cool", uzb: "salqinlanmoq, sovutmoq" },
+    { ing: "help", uzb: "yordam" },
+    { ing: "pedestrian", uzb: "piyoda" },
+    { ing: "stop", uzb: "to'xtamoq, to'xtatmoq" },
+    { ing: "whistle", uzb: "hushtak chalmoq" },
+    { ing: "open", uzb: "ochmoq" },
+    { ing: "do", uzb: "bajarmoq" },
+    { ing: "go", uzb: "bormoq" },
+    { ing: "win", uzb: "g'alaba qozonmoq" },
+    { ing: "lose", uzb: "yo'qotmoq" },
+    { ing: "begin", uzb: "boshlamoq" },
+    { ing: "finish", uzb: "tugatmoq" },
+  ],
+  day10: [
+    { ing: "fridge", uzb: "muzlatgich" },
+    { ing: "t-short", uzb: "futbolka" },
+    { ing: "bed", uzb: "krovat" },
+    { ing: "scarf", uzb: "sharf" },
+    { ing: "aquarium", uzb: "akvarium" },
+    { ing: "doll", uzb: "qog'irchoq" },
+    { ing: "thief", uzb: "og'ri" },
+    { ing: "submarine", uzb: "suvosti kemasi" },
+    { ing: "border", uzb: "chegara" },
+    { ing: "helicopter", uzb: "vertolyot" },
+    { ing: "gun", uzb: "qurol" },
+    { ing: "palace", uzb: "saroy" },
+    { ing: "traffic lights", uzb: "svetafor" },
+    { ing: "mill", uzb: "tegirmon" },
+    { ing: "bowl", uzb: "kosa" },
+    { ing: "hole", uzb: "teshik" },
+    { ing: "sock", uzb: "paypoq" },
+    { ing: "insect", uzb: "hashorot" },
+    { ing: "line", uzb: "navbat" },
+    { ing: "swimming pool", uzb: "suzish havzasi" },
+    { ing: "rock", uzb: "qoyatosh" },
+    { ing: "microbe", uzb: "mikrob" },
+    { ing: "mail", uzb: "pochta" },
+    { ing: "farm", uzb: "ferma" },
+    { ing: "boat", uzb: "qayiq" },
+    { ing: "beach", uzb: "sohil, plyaj" },
+    { ing: "raccoon", uzb: "yenot" },
+    { ing: "zoo", uzb: "hayvnot bog'i" },
+    { ing: "bookshelf", uzb: "kitob javoni" },
+    { ing: "laptop", uzb: "noutbuk" },
+    { ing: "cellphone", uzb: "mobil telefon" },
+    { ing: "bellboy", uzb: "hammol" },
+    { ing: "receptionist", uzb: "qabulchi" },
+    { ing: "kitten", uzb: "mushukcha" },
+    { ing: "asistant", uzb: "yordamchi" },
+    { ing: "musician", uzb: "musiqachi" },
+    { ing: "instrument", uzb: "musiqa asbobi" },
+    { ing: "stage", uzb: "sahna" },
+    { ing: "gardener", uzb: "bog'bon" },
+    { ing: "co-pilot", uzb: "ikkinchi uchuvchi" },
+    { ing: "coach", uzb: "murabbiy" },
+    { ing: "player", uzb: "o'yinchi" },
+    { ing: "notebook", uzb: "daftar" },
+    { ing: "airport", uzb: "aeroport" },
+    { ing: "tomato", uzb: "pamidor" },
+    { ing: "potato", uzb: "kartoshka" },
+    { ing: "fork", uzb: "vilka" },
+    { ing: "spoon", uzb: "qoshiq" },
+    { ing: "map", uzb: "xarita" },
+    { ing: "nose", uzb: "burun" },
+  ],
+  day11:  [
+    { ing: "argue with", uzb: "tortishmoq" },
+    { ing: "bite", uzb: "tishlamoq" },
+    { ing: "cure", uzb: "davolamoq" },
+    { ing: "date with", uzb: "uchrashmoq" },
+    { ing: "ache", uzb: "og'rimoq" },
+    { ing: "mayor", uzb: "shahar hokimi" },
+    { ing: "plant", uzb: "o'simlik" },
+    { ing: "look for", uzb: "qidirmoq" },
+    { ing: "migrate", uzb: "ko'chib o'tmoq" },
+    { ing: "prepare for", uzb: "tayyorlanmoq" },
+    { ing: "deliver", uzb: "yetkazmoq" },
+    { ing: "participate in", uzb: "ishtirok etmoq" },
+    { ing: "soap opera", uzb: "teleserial" },
+    { ing: "harmful", uzb: "zararli" },
+    { ing: "destroy", uzb: "yo'q qilmoq" },
+    { ing: "donate", uzb: "xayriya qilmoq" },
+    { ing: "depart for", uzb: "jo'namoq" },
+    { ing: "sign", uzb: "imzo" },
+    { ing: "get married", uzb: "turmush qurmoq" },
+    { ing: "dig", uzb: "kovlamoq" },
+    { ing: "divorce", uzb: "ajrashmoq" },
+    { ing: "renovate", uzb: "ta'mirlamoq" },
+    { ing: "resign", uzb: "iste'foga chiqmoq" },
+    { ing: "knock", uzb: "taqillatmoq" },
+    { ing: "plate", uzb: "likopcha" },
+    { ing: "stepson", uzb: "o'gay o'g'il" },
+    { ing: "flood", uzb: "suv toshqini" },
+    { ing: "hide and seek", uzb: "bekinmachoq" },
+    { ing: "shiver", uzb: "titramoq" },
+    { ing: "plumber", uzb: "santexnik" },
+    { ing: "tap", uzb: "kran" },
+    { ing: "search for", uzb: "qidirmoq" },
+    { ing: "harvest", uzb: "hosilni yig'moq" },
+    { ing: "crop", uzb: "hosil" },
+    { ing: "flute", uzb: "nay" },
+    { ing: "audience", uzb: "tomoshabin" },
+    { ing: "iron", uzb: "temir" },
+    { ing: "native", uzb: "ona tili" },
+    { ing: "blow", uzb: "puflamoq" },
+    { ing: "raw", uzb: "xom" },
+    { ing: "sunshine", uzb: "quyosh nuri" },
+    { ing: "bookshop", uzb: "kitob do'koni" },
+    { ing: "relax", uzb: "dam olmoq" },
+    { ing: "fight", uzb: "jang qilmoq" },
+    { ing: "bake", uzb: "pishirmoq" },
+    { ing: "classmate", uzb: "sinfdosh" },
+    { ing: "environment", uzb: "atrof-muhit" },
+    { ing: "rule", uzb: "qoida" },
+    { ing: "hold", uzb: "ushlamoq" },
+    { ing: "fix", uzb: "tuzatmoq" },
+  ];
+  
+  day12: [
+    { ing: "argue with", uzb: "baxslashmoq" },
+    { ing: "argue with", uzb: "baxslashmoq" },
+  ],
+  day14: [
+    { ing: "butter", uzb: "sariyog'" },
+    { ing: "juice", uzb: "sharbat" },
+    { ing: "rice", uzb: "guruch" },
+    { ing: "honey", uzb: "asal" },
+    { ing: "belt", uzb: "kamar" },
+    { ing: "glove", uzb: "qo'lqop" },
+    { ing: "peanut", uzb: "yeryong'oq" },
+    { ing: "candle", uzb: "sham" },
+    { ing: "flour", uzb: "un" },
+    { ing: "jam", uzb: "murabbo" },
+    { ing: "pea", uzb: "no'xot" },
+    { ing: "reporter", uzb: "muxbir" },
+    { ing: "store", uzb: "saqlamoq" },
+    { ing: "guest", uzb: "mexmon" },
+    { ing: "banknote", uzb: "banknot, qog'oz pul" },
+    { ing: "electricity", uzb: "elektr" },
+    { ing: "joke", uzb: "hazil" },
+    { ing: "couse", uzb: "sabab bolmoq" },
+    { ing: "chew", uzb: "chaynamoq" },
+    { ing: "quarrel with", uzb: "bilan janjallashmoq" },
+    { ing: "add", uzb: "qo'shmoq" },
+  ],
+  day15: [
+    { ing: "window", uzb: "deraza" },
+    { ing: "go fishing", uzb: "baliq ovlashga bormoq" },
+    { ing: "cartoon", uzb: "multfilm" },
+    { ing: "magazine", uzb: "jurnal" },
+    { ing: "go on holiday", uzb: "tatilga chiqmoq" },
+    { ing: "hard", uzb: "qattiq, qiyin" },
+    { ing: "decision", uzb: "qaror" },
+    { ing: "wake up", uzb: "uyg'onmoq" },
+    { ing: "early", uzb: "erta, barvaqt" },
+    { ing: "take a walk", uzb: "sayr qilmoq" },
+    { ing: "island", uzb: "orol" },
+    { ing: "cross", uzb: "kesib o'tmoq" },
+    { ing: "loudly", uzb: "baland" },
+    { ing: "complain", uzb: "shikoyat qilmoq" },
+    { ing: "stay", uzb: "qolmoq" },
+    { ing: "present", uzb: "sovg'a" },
+    { ing: "take a photo", uzb: "suratga olmoq" },
+    { ing: "rise", uzb: "kotarilmoq" },
+    { ing: "take a break", uzb: "tanaffus qilmoq" },
+    { ing: "wear", uzb: "kiymoq" },
+    { ing: "queen", uzb: "qirolicha" },
+    { ing: "pay", uzb: "to'lamoq" },
+    { ing: "build", uzb: "qurmoq" },
+    { ing: "cake", uzb: "to'rt" },
+    { ing: "king", uzb: "qirol" },
+    { ing: "long", uzb: "uzoq" },
+    { ing: "marker", uzb: "marker" },
+    { ing: "complete", uzb: "bajarmoq" },
+    { ing: "on time", uzb: "o'z vaqtida" },
+    { ing: "pain", uzb: "og'riq" },
+    { ing: "forget", uzb: "unutmoq" },
+    { ing: "date", uzb: "sana" },
+    { ing: "important", uzb: "muhim" },
+    { ing: "teapot", uzb: "choynak" },
+    { ing: "water", uzb: "sug'ormoq" },
+    { ing: "observe", uzb: "kuzatmoq" },
+    { ing: "turn on", uzb: "yoqmoq" },
+    { ing: "lights", uzb: "chiroqlar" },
+    { ing: "lawyer", uzb: "huquqshunos, advokat" },
+    { ing: "draw", uzb: "chizmoq" },
+    { ing: "article", uzb: "maqola" },
+    { ing: "take a nap", uzb: "mizg'ib olmoq" },
+    { ing: "jog", uzb: "yugurmoq" },
+    { ing: "join", uzb: "qo'shilmoq" },
+    { ing: "arrive", uzb: "yetib kelmoq" },
+    { ing: "move", uzb: "ko'chmoq, harakatlanmoq" },
+    { ing: "match", uzb: "o'yin" },
+    { ing: "dress", uzb: "koylak" },
+    { ing: "exercise", uzb: "mashq" },
+    { ing: "explain", uzb: "tushuntirmoq" },
+  ],
+  // Add more weekly words as needed, e.g., day2, day3, etc.
+};
 document.addEventListener("DOMContentLoaded", () => {
   const languageSelect = document.getElementById("language");
   const wordsTypeSelect = document.getElementById("words-type");
@@ -12,114 +251,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const scoreDisplay = document.getElementById("score-display");
   const selectArea = document.querySelector(".selection-area");
   const correctWordDisplay = document.getElementById("correct-word-display");
-
-  const words = {
-    day9: [
-      { ing: "read", uzb: "o'qimoq" },
-      { ing: "play", uzb: "o'ynamoq" },
-      { ing: "rain", uzb: "yomg'ir yog'moq" },
-      { ing: "run", uzb: "yugurmoq" },
-      { ing: "sleep", uzb: "uxlamoq" },
-      { ing: "come", uzb: "kelmoq" },
-      { ing: "learn", uzb: "o'rganmoq" },
-      { ing: "wait", uzb: "kutmoq" },
-      { ing: "bark", uzb: "vovullamoq, akillamoq" },
-      { ing: "drink", uzb: "ichmoq" },
-      { ing: "shout", uzb: "baqirmoq" },
-      { ing: "dance", uzb: "raqsga tushmoq" },
-      { ing: "call", uzb: "qo'ngiroq qilmoq" },
-      { ing: "visit", uzb: "tashrif buyurmoq" },
-      { ing: "driver", uzb: "haydovchi" },
-      { ing: "drive", uzb: "haydamoq" },
-      { ing: "sit", uzb: "o'tirmoq" },
-      { ing: "clean", uzb: "tozalmoq" },
-      { ing: "swim", uzb: "suzmoq" },
-      { ing: "people", uzb: "odamlar" },
-      { ing: "study", uzb: "talim olmoq" },
-      { ing: "employer", uzb: "ish beruvchi" },
-      { ing: "walk", uzb: "yurmoq" },
-      { ing: "ask", uzb: "so'ramoq" },
-      { ing: "sing", uzb: "kuylamoq" },
-      { ing: "listen", uzb: "tinglamoq" },
-      { ing: "pupil", uzb: "oquvchi" },
-      { ing: "answer", uzb: "javob bermoq" },
-      { ing: "parrot", uzb: "to'tiqush" },
-      { ing: "speak", uzb: "gapirmoq" },
-      { ing: "watch", uzb: "tomosha qilmoq" },
-      { ing: "enter", uzb: "kirmoq" },
-      { ing: "fly", uzb: "uchmoq" },
-      { ing: "correct", uzb: "tog'irlamoq" },
-      { ing: "emloyee", uzb: "xodim, ishchi" },
-      { ing: "enjoy", uzb: "rohatlanmoq" },
-      { ing: "air-conditioner", uzb: "konditsioner" },
-      { ing: "work", uzb: "ishlamoq" },
-      { ing: "cool", uzb: "salqinlanmoq, sovutmoq" },
-      { ing: "help", uzb: "yordam" },
-      { ing: "pedestrian", uzb: "piyoda" },
-      { ing: "stop", uzb: "to'xtamoq, to'xtatmoq" },
-      { ing: "whistle", uzb: "hushtak chalmoq" },
-      { ing: "open", uzb: "ochmoq" },
-      { ing: "do", uzb: "bajarmoq" },
-      { ing: "go", uzb: "bormoq" },
-      { ing: "win", uzb: "g'alaba qozonmoq" },
-      { ing: "lose", uzb: "yo'qotmoq" },
-      { ing: "begin", uzb: "boshlamoq" },
-      { ing: "finish", uzb: "tugatmoq" },
-    ],
-    day10: [
-      { ing: "fridge", uzb: "muzlatgich" },
-      { ing: "t-short", uzb: "futbolka" },
-      { ing: "bed", uzb: "krovat" },
-      { ing: "scarf", uzb: "sharf" },
-      { ing: "aquarium", uzb: "akvarium" },
-      { ing: "doll", uzb: "qog'irchoq" },
-      { ing: "thief", uzb: "og'ri" },
-      { ing: "submarine", uzb: "suvosti kemasi" },
-      { ing: "border", uzb: "chegara" },
-      { ing: "helicopter", uzb: "vertolyot" },
-      { ing: "gun", uzb: "qurol" },
-      { ing: "palace", uzb: "saroy" },
-      { ing: "traffic lights", uzb: "svetafor" },
-      { ing: "mill", uzb: "tegirmon" },
-      { ing: "bowl", uzb: "kosa" },
-      { ing: "hole", uzb: "teshik" },
-      { ing: "sock", uzb: "paypoq" },
-      { ing: "insect", uzb: "hashorot" },
-      { ing: "line", uzb: "navbat" },
-      { ing: "swimming pool", uzb: "suzish havzasi" },
-      { ing: "rock", uzb: "qoyatosh" },
-      { ing: "microbe", uzb: "mikrob" },
-      { ing: "mail", uzb: "pochta" },
-      { ing: "farm", uzb: "ferma" },
-      { ing: "boat", uzb: "qayiq" },
-      { ing: "beach", uzb: "sohil, plyaj" },
-      { ing: "raccoon", uzb: "yenot" },
-      { ing: "zoo", uzb: "hayvnot bog'i" },
-      { ing: "bookshelf", uzb: "kitob javoni" },
-      { ing: "laptop", uzb: "noutbuk" },
-      { ing: "cellphone", uzb: "mobil telefon" },
-      { ing: "bellboy", uzb: "hammol" },
-      { ing: "receptionist", uzb: "qabulchi" },
-      { ing: "kitten", uzb: "mushukcha" },
-      { ing: "asistant", uzb: "yordamchi" },
-      { ing: "musician", uzb: "musiqachi" },
-      { ing: "instrument", uzb: "musiqa asbobi" },
-      { ing: "stage", uzb: "sahna" },
-      { ing: "gardener", uzb: "bog'bon" },
-      { ing: "co-pilot", uzb: "ikkinchi uchuvchi" },
-      { ing: "coach", uzb: "murabbiy" },
-      { ing: "player", uzb: "o'yinchi" },
-      { ing: "notebook", uzb: "daftar" },
-      { ing: "airport", uzb: "aeroport" },
-      { ing: "tomato", uzb: "pamidor" },
-      { ing: "potato", uzb: "kartoshka" },
-      { ing: "fork", uzb: "vilka" },
-      { ing: "spoon", uzb: "qoshiq" },
-      { ing: "map", uzb: "xarita" },
-      { ing: "nose", uzb: "burun" },
-    ],
-    // Add more weekly words as needed, e.g., day2, day3, etc.
-  };
+  const noWords = document.getElementById("noWords");
+  const words = data;
 
   let currentLanguage = "en";
   let currentWords = [];
@@ -127,7 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let totalWords = 0;
   let currentWord = "";
   let interval;
-  let dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // So'nggi kundan boshlaymiz
+  let dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // songi kunni bilib olish
 
   wordsTypeSelect.addEventListener("change", () => {
     if (wordsTypeSelect.value === "weekly") {
@@ -152,12 +285,21 @@ document.addEventListener("DOMContentLoaded", () => {
     if (wordsType === "daily") {
       dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // So'nggi kundan boshlaymiz
       currentWords = words[`day${dayIndex}`]; // So'nggi kun so'zlari
-    } else if (wordsType === "weekly" && !isNaN(weekNumber)) {
-      currentWords = words[`day${weekNumber}`] || words[`day${dayIndex}`];
+    } else if (wordsType === "weekly") {
+      const days = Object.keys(words).map((v) => +v.slice(3));
+      if (days.includes(weekNumber)) {
+        currentWords = words[`day${weekNumber}`];
+      } else {
+        noWords.innerText =
+          "Sorry, that's it daily words are not available. Try entering another day!";
+        return 1;
+      }
     } else {
       currentWords = Object.values(words).flat(); // Barcha so'zlar
     }
-
+    if (currentWords.length == 0) {
+      location.reload();
+    }
     gameArea.style.display = "block";
     scoreDisplay.style.display = "none";
     score = 0;
@@ -168,13 +310,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function nextWord() {
+    console.log(data.day15);
+    console.log(words.day15);
+    const wordsType = wordsTypeSelect.value;
     clearInterval(interval);
     translationInput.value = "";
-    if (currentWords.length === 0 && words[`day${dayIndex - 1}`]) {
-      dayIndex--; // Oldingi kun so'zlariga o'tamiz
+    if (
+      currentWords.length === 0 &&
+      (words[`day${dayIndex - 1}`] || words[`day${dayIndex - 2}`]) &&
+      wordsType === "daily"
+    ) {
+      words[`day${dayIndex - 1}`] ? dayIndex-- : (dayIndex -= 2); // Oldingi kun so'zlariga o'tamiz
       currentWords = words[`day${dayIndex}`];
+    } else if (totalWords === 50 && wordsType == "weekly") {
+      endGame();
     } else if (
       !words[`day${dayIndex - 1}`] &&
+      !words[`day${dayIndex - 2}`] &&
       !words[`day${dayIndex}`].length
     ) {
       location.reload();
@@ -197,7 +349,12 @@ document.addEventListener("DOMContentLoaded", () => {
         ? currentWord.uzb.split(",")
         : currentWord.ing.toLowerCase();
 
-    if (
+    if (translation?.includes(",") && Array.isArray(correctTranslation)) {
+      const translate = translation.split(",");
+      (correctTranslation.includes(translate[0]) ||
+        correctTranslation.includes(translate[1])) &&
+        score++;
+    } else if (
       (Array.isArray(correctTranslation) &&
         correctTranslation.includes(translation)) ||
       translation == correctTranslation
