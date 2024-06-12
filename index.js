@@ -103,7 +103,7 @@ const data = {
     { ing: "map", uzb: "xarita" },
     { ing: "nose", uzb: "burun" },
   ],
-  day11:  [
+  day11: [
     { ing: "argue with", uzb: "tortishmoq" },
     { ing: "bite", uzb: "tishlamoq" },
     { ing: "cure", uzb: "davolamoq" },
@@ -154,8 +154,8 @@ const data = {
     { ing: "rule", uzb: "qoida" },
     { ing: "hold", uzb: "ushlamoq" },
     { ing: "fix", uzb: "tuzatmoq" },
-  ];
-  
+  ],
+
   day12: [
     { ing: "argue with", uzb: "baxslashmoq" },
     { ing: "argue with", uzb: "baxslashmoq" },
