@@ -235,6 +235,56 @@ const data = {
     { ing: "exercise", uzb: "mashq" },
     { ing: "explain", uzb: "tushuntirmoq" },
   ],
+  day16: [
+    { ing: "kindergarten", uzb: "bolalar bog'chasi" },
+    { ing: "postman", uzb: "pochtalyon" },
+    { ing: "package", uzb: "paket, posilka" },
+    { ing: "teatime", uzb: "choy vaqti" },
+    { ing: "treat", uzb: "davolamoq" },
+    { ing: "warm up", uzb: "qizdirmoq, isitmoq" },
+    { ing: "streetlight", uzb: "kocha chirog'i" },
+    { ing: "dusk", uzb: "shom vaqti, oqshom" },
+    { ing: "dawn", uzb: "erta, sahar" },
+    { ing: "blooom", uzb: "gullamoq" },
+    { ing: "gather", uzb: "yig'ilmoq, to'planmoq" },
+    { ing: "sale", uzb: "savdo, sotish" },
+    { ing: "government", uzb: "hukumat" },
+    { ing: "force", uzb: "kuch" },
+    { ing: "stranger", uzb: "begona" },
+    { ing: "ban", uzb: "taqiqlamoq" },
+    { ing: "celebrate", uzb: "nishonlamoq" },
+    { ing: "damage", uzb: "zarar, ziyon" },
+    { ing: "vacation", uzb: "tatil" },
+    { ing: "ray", uzb: "nur, shula" },
+    { ing: "chily", uzb: "juda sovuq, izg'irin" },
+    { ing: "lie", uzb: "aldamoq" },
+    { ing: "put on", uzb: "kiymoq" },
+    { ing: "freeze", uzb: "muzlamoq, muzlatmoq" },
+    { ing: "fall", uzb: "sharshara" },
+    { ing: "century", uzb: "asr" },
+    { ing: "spoil", uzb: "buzilmoq, aynomoq" },
+    { ing: "rot", uzb: "chirmoq" },
+    { ing: "pass away", uzb: "vafot etmoq" },
+    { ing: "export", uzb: "export qilmoq, chetga sotmoq" },
+    { ing: "gardening", uzb: "bogdorchilik, bogbonlik" },
+    { ing: "monitor", uzb: "tekshirmoq, kuzatmoq" },
+    { ing: "situation", uzb: "vaziyat" },
+    { ing: "go up", uzb: "kotarilmoq, yuqoriga chiqmoq" },
+    { ing: "industry", uzb: "sanoat" },
+    { ing: "wasp", uzb: "qovog'ari" },
+    { ing: "fly", uzb: "pashsha" },
+    { ing: "almost", uzb: "deyarli" },
+    { ing: "protect", uzb: "qoida" },
+    { ing: "revolve", uzb: "aylanmoq" },
+    { ing: "oxygen", uzb: "kislarod" },
+    { ing: "produce", uzb: "ishlab chiqarmoq" },
+    { ing: "swallow", uzb: "qaldirg'och" },
+    { ing: "offer", uzb: "taklif qilmoq" },
+    { ing: "prison", uzb: "qamoqxona" },
+    { ing: "criminal", uzb: "jinoyatchi" },
+    { ing: "wight", uzb: "og'irligi ... bolmoq" },
+    { ing: "severe", uzb: "og'ir, kuchli, qattiq" },
+  ],
   // Add more weekly words as needed, e.g., day2, day3, etc.
 };
 document.addEventListener("DOMContentLoaded", () => {
@@ -252,7 +302,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectArea = document.querySelector(".selection-area");
   const correctWordDisplay = document.getElementById("correct-word-display");
   const noWords = document.getElementById("noWords");
-  const words = data;
+  const refreshBtn = document.getElementById("refresh-btn");
+  const endBtn = document.getElementById("end-btn");
+  const continueBtn = document.getElementById("continue-btn");
+
+  let words = JSON.parse(JSON.stringify(data));
 
   let currentLanguage = "en";
   let currentWords = [];
@@ -261,6 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentWord = "";
   let interval;
   let dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // songi kunni bilib olish
+  let dayWords = null;
 
   wordsTypeSelect.addEventListener("change", () => {
     if (wordsTypeSelect.value === "weekly") {
@@ -277,7 +332,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return res;
   }
 
-  function startGame() {
+  const getWordsType = (words) => {
     currentLanguage = languageSelect.value;
     const wordsType = wordsTypeSelect.value;
     const weekNumber = parseInt(weekNumberInput.value, 10);
@@ -297,8 +352,13 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       currentWords = Object.values(words).flat(); // Barcha so'zlar
     }
-    if (currentWords.length == 0) {
-      location.reload();
+  };
+
+  function startGame() {
+    getWordsType(words);
+    const wordsType = wordsTypeSelect.value;
+    if (currentWords.length == 0 && wordsType == "weekly") {
+      refreshWords();
     }
     gameArea.style.display = "block";
     scoreDisplay.style.display = "none";
@@ -310,8 +370,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function nextWord() {
-    console.log(data.day15);
-    console.log(words.day15);
+    console.log(totalWords);
     const wordsType = wordsTypeSelect.value;
     clearInterval(interval);
     translationInput.value = "";
@@ -382,6 +441,21 @@ document.addEventListener("DOMContentLoaded", () => {
     selectArea.style.display = "inline";
   }
 
+  const refreshWords = () => {
+    words = JSON.parse(JSON.stringify(data));
+    console.log(words);
+    clearInterval(interval);
+    endBtn.style.display = "none";
+    refreshBtn.style.display = "none";
+    continueBtn.style.display = "none";
+    doneBtn.style.display = "inline";
+    stopBtn.style.display = "inline";
+    getWordsType(words);
+    score = 0;
+    totalWords = 0;
+    nextWord();
+  };
+
   translationInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       checkTranslation();
@@ -390,5 +464,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   startBtn.addEventListener("click", startGame);
   doneBtn.addEventListener("click", checkTranslation);
-  stopBtn.addEventListener("click", endGame);
+  stopBtn.addEventListener("click", () => {
+    clearInterval(interval);
+    endBtn.style.display = "block";
+    refreshBtn.style.display = "block";
+    continueBtn.style.display = "block";
+    doneBtn.style.display = "none";
+    stopBtn.style.display = "none";
+    // translationInput.style.display = "none";
+  });
+  endBtn.addEventListener("click", endGame);
+  refreshBtn.addEventListener("click", refreshWords);
+  continueBtn.addEventListener("click", () => {
+    console.log(totalWords);
+    checkTranslation();
+    endBtn.style.display = "none";
+    refreshBtn.style.display = "none";
+    continueBtn.style.display = "none";
+    doneBtn.style.display = "inline";
+    stopBtn.style.display = "inline";
+  });
 });

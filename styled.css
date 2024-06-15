@@ -32,6 +32,22 @@ label {
   margin-bottom: 30px;
 }
 
+.words-selection {
+  margin-bottom: 10px;
+}
+
+#translation-input {
+  width: 500px;
+  display: block;
+  margin: auto;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  /* padding: 4px; */
+  height: 30px;
+  border: 2px solid #363636;
+  outline: none;
+}
+
 #word-display {
   font-size: 32px;
   margin-bottom: 10px;
@@ -56,26 +72,15 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  opacity: 0.88;
+  transform: scale(0.99);
 }
 
-.words-selection {
-  margin-bottom: 10px;
+button:active {
+  transform: scale(0.9);
 }
 
-#translation-input {
-  width: 500px;
-  display: block;
-  margin: auto;
-  margin-bottom: 25px;
-  border-radius: 8px;
-  /* padding: 4px; */
-  height: 30px;
-  border: 2px solid #363636;
-  outline: none;
-}
-
-#start-btn {
+.start-btn {
   width: 169px;
   height: 50px;
   font-size: 24px;
@@ -100,6 +105,19 @@ button:hover {
 .week-selection {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 4px 10px;
+}
+
+.end {
+  background-color: red;
+}
+
+.continue {
+  background-color: green;
 }
 
 @keyframes fadeInOut {

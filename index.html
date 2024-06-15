@@ -37,7 +37,7 @@
         </div>
         <b><div id="score-display" style="display: none"></div></b>
         <b><div id="noWords"></div></b>
-        <button id="start-btn">Start</button>
+        <button id="start-btn" class="start-btn">Start</button>
       </div>
       <div class="game-area" style="display: none">
         <div id="word-display"></div>
@@ -49,6 +49,17 @@
         />
         <button id="done-btn">Done</button>
         <button id="stop-btn">Stop</button>
+        <div style="display: flex; gap: 8px; width: 90%; justify-content: end">
+          <button id="end-btn" class="btn end" style="display: none">
+            End
+          </button>
+          <button id="refresh-btn" class="btn" style="display: none">
+            Refresh
+          </button>
+          <button id="continue-btn" class="btn continue" style="display: none">
+            Continue
+          </button>
+        </div>
       </div>
     </div>
     <script src="index.js"></script>
