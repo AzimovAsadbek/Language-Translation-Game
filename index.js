@@ -1,4 +1,108 @@
 const data = {
+  day6: [
+    { ing: "sky", uzb: "osmon" },
+    { ing: "blue", uzb: "moviy, ko'k" },
+    { ing: "star", uzb: "yulduz" },
+    { ing: "relaxing", uzb: "maroqli, orombaxsh" },
+    { ing: "pole", uzb: "qutb" },
+    { ing: "exciting", uzb: "hayajonli" },
+    { ing: "cycling", uzb: "velosport" },
+    { ing: "wall", uzb: "devor" },
+    { ing: "great", uzb: "buyuk" },
+    { ing: "high", uzb: "baland, yuqori" },
+    { ing: "famous", uzb: "mashhur" },
+    { ing: "pope", uzb: "papa" },
+    { ing: "universe", uzb: "koinot" },
+    { ing: "earth", uzb: "yer" },
+    { ing: "planet", uzb: "sayyora" },
+    { ing: "thrilling", uzb: "hayajonli, zavqli" },
+    { ing: "chess", uzb: "shaxmat" },
+    { ing: "continent", uzb: "qit'a" },
+    { ing: "pleasant", uzb: "yoqimli" },
+    { ing: "animal", uzb: "hayvon" },
+    { ing: "cunning", uzb: "ayyor" },
+    { ing: "edition", uzb: "nashr" },
+    { ing: "rotten", uzb: "chirigan" },
+    { ing: "vehicle", uzb: "transport vositasi" },
+    { ing: "ring", uzb: "uzuk" },
+    { ing: "lazy", uzb: "dangasa" },
+    { ing: "wide", uzb: "keng" },
+    { ing: "sad", uzb: "g'amgin, hafa" },
+    { ing: "deaf", uzb: "kar" },
+    { ing: "cautious", uzb: "ehtiyotkor" },
+    { ing: "blind", uzb: "ko'r" },
+    { ing: "grateful", uzb: "minnatdor, mamnun" },
+    { ing: "wise", uzb: "dono" },
+    { ing: "powerful", uzb: "kuchli" },
+    { ing: "stupid", uzb: "ahmoq" },
+    { ing: "mean", uzb: "baxil" },
+    { ing: "experienced", uzb: "tajribali" },
+    { ing: "energetic", uzb: "g'ayratli, shijoatli" },
+    { ing: "valley", uzb: "vodiy" },
+    { ing: "grey", uzb: "kulrang" },
+    { ing: "lamp", uzb: "chiroq" },
+    { ing: "broken", uzb: "singan" },
+    { ing: "scary", uzb: "qo'rqinchli" },
+    { ing: "roof", uzb: "tom" },
+    { ing: "church", uzb: "cherkov" },
+    { ing: "torn", uzb: "yirtilgan" },
+    { ing: "handsome", uzb: "kelishgan" },
+    { ing: "plane", uzb: "samolyot" },
+    { ing: "wing", uzb: "qanot" },
+    { ing: "slippery", uzb: "sirg'anchiq" },
+  ],
+  day8: [
+    { ing: "bag", uzb: "sumka" },
+    { ing: "laboratory", uzb: "laboratoriya" },
+    { ing: "box", uzb: "quti" },
+    { ing: "classroom", uzb: "sinf xonasi" },
+    { ing: "glass", uzb: "shisha, stakan" },
+    { ing: "orange", uzb: "apelsin" },
+    { ing: "table", uzb: "stol" },
+    { ing: "picture", uzb: "rasm" },
+    { ing: "ceiling", uzb: "shift, potolok" },
+    { ing: "cup", uzb: "chashka, kubok" },
+    { ing: "floor", uzb: "pol" },
+    { ing: "shoes", uzb: "poyabzal" },
+    { ing: "hat", uzb: "shlyapa" },
+    { ing: "head", uzb: "bosh" },
+    { ing: "bin", uzb: "axlat qutisi" },
+    { ing: "treasure", uzb: "xazina" },
+    { ing: "ground", uzb: "yer" },
+    { ing: "stairs", uzb: "zinalar" },
+    { ing: "blanket", uzb: "adyol" },
+    { ing: "pillow", uzb: "yostiq" },
+    { ing: "ball", uzb: "to'p" },
+    { ing: "couch", uzb: "divan" },
+    { ing: "office", uzb: "idora" },
+    { ing: "bridge", uzb: "ko'prik" },
+    { ing: "shop", uzb: "do'kon" },
+    { ing: "bakery", uzb: "novvoyxona" },
+    { ing: "policeman", uzb: "politsiyachi" },
+    { ing: "desk", uzb: "yozuv stoli, parta" },
+    { ing: "curtain", uzb: "parda" },
+    { ing: "playground", uzb: "o'yin maydonchasi" },
+    { ing: "sofa", uzb: "divan" },
+    { ing: "police station", uzb: "politsiya mahkamasi" },
+    { ing: "mall", uzb: "yirik savdo markazi" },
+    { ing: "firefighter", uzb: "o't o'chiruvchi" },
+    { ing: "apartment", uzb: "xonadon" },
+    { ing: "bus stop", uzb: "avtobus bekati" },
+    { ing: "path", uzb: "yo'lak, yo'lka" },
+    { ing: "fireplace", uzb: "kamin" },
+    { ing: "building", uzb: "bino" },
+    { ing: "market", uzb: "bozor, do'kon" },
+    { ing: "mosque", uzb: "masjid" },
+    { ing: "charger", uzb: "quvvatlagich, zaryadnik" },
+    { ing: "basket", uzb: "savat" },
+    { ing: "chicken", uzb: "tovuq" },
+    { ing: "store", uzb: "do'kon" },
+    { ing: "painting", uzb: "rasm" },
+    { ing: "station", uzb: "vokzal, bekat" },
+    { ing: "mirror", uzb: "ko'zg'u" },
+    { ing: "shelf", uzb: "tokcha" },
+    { ing: "post office", uzb: "pochta idorasi" },
+  ],
   day9: [
     { ing: "read", uzb: "o'qimoq" },
     { ing: "play", uzb: "o'ynamoq" },
@@ -305,6 +409,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const refreshBtn = document.getElementById("refresh-btn");
   const endBtn = document.getElementById("end-btn");
   const continueBtn = document.getElementById("continue-btn");
+  console.log(data.day8);
 
   let words = JSON.parse(JSON.stringify(data));
 
@@ -315,7 +420,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentWord = "";
   let interval;
   let dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // songi kunni bilib olish
-  let dayWords = null;
+  let last = 0;
 
   wordsTypeSelect.addEventListener("change", () => {
     if (wordsTypeSelect.value === "weekly") {
@@ -328,8 +433,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function getRandomWord() {
     let n = Math.floor(Math.random() * currentWords.length);
     let res = currentWords[n];
-    currentWords.splice(n, 1);
-    return res;
+    if (score > 0 && score === last) {
+      last += 1;
+      currentWords.splice(n, 1);
+    } else return res;
   }
 
   const getWordsType = (words) => {
@@ -355,22 +462,24 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   function startGame() {
-    getWordsType(words);
-    const wordsType = wordsTypeSelect.value;
-    if (currentWords.length == 0 && wordsType == "weekly") {
-      refreshWords();
+    if (!getWordsType(words)) {
+      const wordsType = wordsTypeSelect.value;
+      if (currentWords.length == 0 && wordsType == "weekly") {
+        refreshWords();
+      }
+      gameArea.style.display = "block";
+      scoreDisplay.style.display = "none";
+      score = 0;
+      totalWords = 0;
+      nextWord();
+      startBtn.style.display = "none";
+      selectArea.style.display = "none";
+    } else {
+      confirm("Sorry, Daily words are not available ");
     }
-    gameArea.style.display = "block";
-    scoreDisplay.style.display = "none";
-    score = 0;
-    totalWords = 0;
-    nextWord();
-    startBtn.style.display = "none";
-    selectArea.style.display = "none";
   }
 
   function nextWord() {
-    console.log(totalWords);
     const wordsType = wordsTypeSelect.value;
     clearInterval(interval);
     translationInput.value = "";
@@ -381,7 +490,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       words[`day${dayIndex - 1}`] ? dayIndex-- : (dayIndex -= 2); // Oldingi kun so'zlariga o'tamiz
       currentWords = words[`day${dayIndex}`];
-    } else if (totalWords === 50 && wordsType == "weekly") {
+    } else if (!currentWords.length && wordsType == "weekly") {
       endGame();
     } else if (
       !words[`day${dayIndex - 1}`] &&
@@ -394,7 +503,6 @@ document.addEventListener("DOMContentLoaded", () => {
       currentWord = getRandomWord();
       wordDisplay.textContent =
         currentLanguage === "en" ? currentWord.ing : currentWord.uzb;
-      totalWords++;
       interval = setTimeout(checkTranslation, 10000);
     } else {
       endGame();
@@ -435,10 +543,9 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(interval);
     gameArea.style.display = "none";
     scoreDisplay.style.display = "block";
-    const percentage = Math.round((score / totalWords) * 100);
-    scoreDisplay.textContent = `You got ${percentage}% correct translations! ${score}/${totalWords}`;
     startBtn.style.display = "inline";
     selectArea.style.display = "inline";
+    scoreDisplay.textContent = `Congratulations, you translated ${score} words correctly`;
   }
 
   const refreshWords = () => {
@@ -452,7 +559,6 @@ document.addEventListener("DOMContentLoaded", () => {
     stopBtn.style.display = "inline";
     getWordsType(words);
     score = 0;
-    totalWords = 0;
     nextWord();
   };
 
@@ -476,7 +582,6 @@ document.addEventListener("DOMContentLoaded", () => {
   endBtn.addEventListener("click", endGame);
   refreshBtn.addEventListener("click", refreshWords);
   continueBtn.addEventListener("click", () => {
-    console.log(totalWords);
     checkTranslation();
     endBtn.style.display = "none";
     refreshBtn.style.display = "none";
