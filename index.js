@@ -389,8 +389,63 @@ const data = {
     { ing: "wight", uzb: "og'irligi ... bolmoq" },
     { ing: "severe", uzb: "og'ir, kuchli, qattiq" },
   ],
+
+  day17: [
+    { ing: "bathroom", uzb: "hammom" },
+    { ing: "fresh", uzb: "yangi, toza" },
+    { ing: "soapy", uzb: "sovunli" },
+    { ing: "moldy", uzb: "mog'orli" },
+    { ing: "home-made", uzb: "uyda tayyorlangan" },
+    { ing: "melt", uzb: "erimoq" },
+    { ing: "tower", uzb: "minora" },
+    { ing: "polluted", uzb: "ifloslangan" },
+    { ing: "illness", uzb: "kasallik" },
+    { ing: "pollution", uzb: "ifloslanish" },
+    { ing: "tyre", uzb: "shina, balon" },
+    { ing: "advice", uzb: "maslahat" },
+    { ing: "specialist", uzb: "mutaxassis" },
+    { ing: "ally", uzb: "ittifoqdosh" },
+    { ing: "childhood", uzb: "bolalik" },
+    { ing: "private", uzb: "shaxsiy" },
+    { ing: "stale", uzb: "eskirgan, aynigan" },
+    { ing: "loyal", uzb: "sodiq" },
+    { ing: "supporter", uzb: "qo'llab-quvvatlovchi" },
+    { ing: "sunflower", uzb: "kungaboqar" },
+    { ing: "leafy", uzb: "bargli" },
+    { ing: "contain", uzb: "ichiga olmoq" },
+    { ing: "client", uzb: "mijoz" },
+    { ing: "install", uzb: "o'rnatmoq" },
+    { ing: "healthy", uzb: "sog'lom" },
+    { ing: "attract", uzb: "jalb qilmoq" },
+    { ing: "visitor", uzb: "tashrif buyuruvchi" },
+    { ing: "wealth", uzb: "boylik" },
+    { ing: "illegal", uzb: "noqonuniy" },
+    { ing: "luggage", uzb: "bagaj, yuk" },
+    { ing: "modern", uzb: "zamonaviy" },
+    { ing: "land", uzb: "qo'nmoq" },
+    { ing: "appear", uzb: "ko'rinmoq" },
+    { ing: "maid", uzb: "xizmatkor" },
+    { ing: "change", uzb: "o'zgartirmoq" },
+    { ing: "save", uzb: "jamg'armoq" },
+    { ing: "knowledge", uzb: "bilim" },
+    { ing: "poison", uzb: "zahar" },
+    { ing: "outside", uzb: "tashqarida" },
+    { ing: "useful", uzb: "foydali" },
+    { ing: "product", uzb: "mahsulot" },
+    { ing: "public", uzb: "ommaviy" },
+    { ing: "active", uzb: "faol" },
+    { ing: "electronic", uzb: "elektron" },
+    { ing: "dictionary", uzb: "lug'at" },
+    { ing: "iron", uzb: "temir" },
+    { ing: "song", uzb: "qo'shiq" },
+    { ing: "national", uzb: "milliy" },
+    { ing: "subject", uzb: "mavzu" },
+    { ing: "secret", uzb: "sir" },
+  ],
+
   // Add more weekly words as needed, e.g., day2, day3, etc.
 };
+
 document.addEventListener("DOMContentLoaded", () => {
   const languageSelect = document.getElementById("language");
   const wordsTypeSelect = document.getElementById("words-type");
@@ -409,7 +464,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const refreshBtn = document.getElementById("refresh-btn");
   const endBtn = document.getElementById("end-btn");
   const continueBtn = document.getElementById("continue-btn");
-  console.log(data.day8);
 
   let words = JSON.parse(JSON.stringify(data));
 
@@ -420,7 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentWord = "";
   let interval;
   let dayIndex = Object.keys(words)[Object.keys(words).length - 1].slice(3); // songi kunni bilib olish
-  let last = 0;
+  let last = -1;
 
   wordsTypeSelect.addEventListener("change", () => {
     if (wordsTypeSelect.value === "weekly") {
@@ -433,10 +487,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function getRandomWord() {
     let n = Math.floor(Math.random() * currentWords.length);
     let res = currentWords[n];
-    if (score > 0 && score === last) {
-      last += 1;
+
+    if (score > last) {
       currentWords.splice(n, 1);
-    } else return res;
+      last += 1;
+      return res;
+    } else {
+      return res;
+    }
   }
 
   const getWordsType = (words) => {
@@ -480,6 +538,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function nextWord() {
+    console.log(score, last, currentWords);
+
     const wordsType = wordsTypeSelect.value;
     clearInterval(interval);
     translationInput.value = "";
@@ -499,8 +559,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ) {
       location.reload();
     }
+
     if (currentWords.length > 0) {
       currentWord = getRandomWord();
+
       wordDisplay.textContent =
         currentLanguage === "en" ? currentWord.ing : currentWord.uzb;
       interval = setTimeout(checkTranslation, 10000);
@@ -511,10 +573,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function checkTranslation() {
     const translation = translationInput.value.trim().toLowerCase();
+
     const correctTranslation =
       currentLanguage === "en"
-        ? currentWord.uzb.split(",")
-        : currentWord.ing.toLowerCase();
+        ? currentWord?.uzb.split(",")
+        : currentWord?.ing.toLowerCase();
 
     if (translation?.includes(",") && Array.isArray(correctTranslation)) {
       const translate = translation.split(",");
@@ -535,7 +598,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       correctWordDisplay.style.display = "none";
     }, 2000);
-
     nextWord();
   }
 
@@ -550,7 +612,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const refreshWords = () => {
     words = JSON.parse(JSON.stringify(data));
-    console.log(words);
     clearInterval(interval);
     endBtn.style.display = "none";
     refreshBtn.style.display = "none";
