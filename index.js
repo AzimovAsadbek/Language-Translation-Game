@@ -99,7 +99,7 @@ const data = {
     { ing: "show", uzb: "ko'rsatmoq" },
     { ing: "jump", uzb: "sakramoq" },
     { ing: "yard", uzb: "hovli, maydon" },
-    { ing: "bring", uzb: "olib kelmoq" }
+    { ing: "bring", uzb: "olib kelmoq" },
   ],
   day3: [
     { ing: "name", uzb: "ism" },
@@ -151,9 +151,9 @@ const data = {
     { ing: "task", uzb: "vazifa" },
     { ing: "war", uzb: "urush" },
     { ing: "income", uzb: "daromad" },
-    { ing: "party", uzb: "partiya" }
+    { ing: "party", uzb: "partiya" },
   ],
-   day4: [
+  day4: [
     { ing: "librarian", uzb: "kutubxonachi" },
     { ing: "sociable", uzb: "kirishimli" },
     { ing: "naive", uzb: "sodda, ishonuvchan" },
@@ -200,7 +200,7 @@ const data = {
     { ing: "grave", uzb: "qabr" },
     { ing: "cobbler", uzb: "kosib" },
     { ing: "turtle", uzb: "toshbaqa" },
-    { ing: "hairdresser", uzb: "sartarosh" }
+    { ing: "hairdresser", uzb: "sartarosh" },
   ],
   day6: [
     { ing: "sky", uzb: "osmon" },
